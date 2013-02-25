@@ -1,0 +1,38 @@
+color[] colors = { #9BFAE8, #9CCDD9, #6C9AA6, #A66C6C, #BF3D3D};
+
+void setup() {
+  size(700, 700);
+  background(255);
+}
+
+void draw() {
+}
+
+void circ(color c){
+  noStroke();
+  int ara = #FD787E;
+  fill(c);
+  ellipse (0,0,100,100);
+  fill(ara);
+  ellipse (0,0,85,85);
+  fill(c);
+  ellipse (0,0,70,70);
+  fill(ara);
+  ellipse (0,0,55,55);
+  fill(c);
+  ellipse (0,0,40,40);
+  fill(ara);
+  ellipse (0,0,25,25);
+  fill(c);
+  ellipse (0,0,10,10);
+  
+}
+
+void mouseMoved() {
+  
+  pushMatrix();
+  translate(random(width), random(height));
+  int index = int(random(colors.length));
+  circ(colors[index]);
+  popMatrix();
+}
